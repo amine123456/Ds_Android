@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/bluebg"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".SignupLoginActivity">
+
+    <TextView
+        android:id="@+id/notetitle"
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="#2261A3"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="Take Note"
+        android:textAlignment="center"
+        android:textColor="#fff" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_below="@id/notetitle"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="4dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="5dp"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:inputType="textEmailAddress"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_password"
+        android:layout_below="@id/username"
+        android:imeActionLabel="@string/action_sign_in_short"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password"
+            android:layout_gravity="start"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#00ADB3"
+            android:text="@string/action_sign_in"
+            android:textColor="#fff" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_below="@id/login"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.amine.dsAndroidNoteApp.TitleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/notetitle"
+        android:layout_alignEnd="@+id/notetitle"
+        android:layout_alignRight="@+id/notetitle"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:layout_marginBottom="87dp" />
+
+</RelativeLayout>
